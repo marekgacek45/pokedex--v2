@@ -3,12 +3,14 @@ import { ThemeProvider } from '@/app/components/theme/theme-provider'
 
 import Header from '@/app/components/header'
 
+import { Roboto } from 'next/font/google'
 import './globals.css'
 
+const roboto = Roboto({ weight: ['400', '500', '700'], subsets: ['latin'] })
 
 export const metadata: Metadata = {
 	title: 'Pokedex',
-	description: 'Pokedex',
+	description: "Catch 'Em All!",
 }
 
 export default function RootLayout({
@@ -18,16 +20,10 @@ export default function RootLayout({
 }>) {
 	return (
 		<html lang='en' suppressHydrationWarning>
-			<body className={` antialiased`}>
-
+			<body className={`${roboto.className} antialiased`}>
 				<ThemeProvider attribute='class' defaultTheme='system' enableSystem disableTransitionOnChange>
-
-
 					<Header />
-
 					{children}
-
-
 				</ThemeProvider>
 			</body>
 		</html>
