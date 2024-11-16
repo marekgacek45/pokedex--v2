@@ -1,6 +1,7 @@
 export interface Pokemon {
 	id: number
 	name: string
+	url:string
     types: Array<Type>
 	sprites: {
 		front_default: string
